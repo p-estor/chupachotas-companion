@@ -7,6 +7,14 @@
   --text-muted: var(--text-secondary);
   --border-color: var(--border-normal);
   --border-hover: var(--border-glow);
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+/* Datos numéricos — KDA, nivel, timestamps */
+.mono {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
 }
 
 * {
@@ -22,8 +30,8 @@ body {
   overflow: hidden;
   height: 100vh;
   background-image: 
-    radial-gradient(circle at 10% 20%, rgba(138, 43, 226, 0.1) 0%, transparent 40%),
-    radial-gradient(circle at 90% 80%, rgba(0, 240, 255, 0.08) 0%, transparent 40%);
+    radial-gradient(circle at 10% 20%, rgba(168, 85, 247, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(0, 210, 255, 0.06) 0%, transparent 40%);
   background-attachment: fixed;
 }
 
@@ -53,8 +61,8 @@ body {
 }
 
 .logo-icon {
-  color: var(--accent-cyan);
-  text-shadow: 0 0 10px rgba(0, 240, 255, 0.4);
+  /* ponytail: text-shadow eliminado — no aplica a SVG. Color tampoco necesario, el SVG usa fill directamente. */
+  flex-shrink: 0;
 }
 
 .highlight {
@@ -130,6 +138,19 @@ body {
 .nav-item.active {
   border-left: 3px solid var(--accent-cyan);
   background: linear-gradient(90deg, rgba(0, 240, 255, 0.05) 0%, rgba(0, 240, 255, 0) 100%);
+}
+
+.nav-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  color: currentColor;
+  transition: color 0.2s ease;
+}
+
+.nav-item.active .nav-icon {
+  color: var(--accent-cyan);
+  filter: drop-shadow(0 0 4px rgba(0, 210, 255, 0.4));
 }
 
 .sidebar-footer {

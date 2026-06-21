@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
   <script type="module" src="/main.js" defer></script>
 </head>
 <body>
@@ -16,7 +16,10 @@
     <!-- Sidebar Navigation -->
     <aside class="sidebar">
       <div class="logo">
-        <span class="logo-icon">✦</span>
+        <svg viewBox="0 0 40 42" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-icon" aria-hidden="true" width="20" height="21">
+          <polygon points="20,2 38,20 20,20 2,20" fill="var(--accent-cyan)"/>
+          <polygon points="20,22 38,22 20,40 2,22" fill="var(--accent-purple)"/>
+        </svg>
         <span class="logo-text">chupachotas<span class="highlight">.companion</span></span>
       </div>
       <!-- Profile Widget (visible when connected) -->
@@ -29,16 +32,34 @@
       </div>
       <nav class="nav-menu">
         <a href="#" class="nav-item active" id="nav-dashboard">
-          <span class="nav-icon">📊</span> Panel de Control
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="3" width="7" height="7" rx="1"/>
+            <rect x="14" y="3" width="7" height="7" rx="1"/>
+            <rect x="3" y="14" width="7" height="7" rx="1"/>
+            <rect x="14" y="14" width="7" height="7" rx="1"/>
+          </svg>
+          Panel de Control
         </a>
         <a href="#" class="nav-item" id="nav-draft">
-          <span class="nav-icon">🔮</span> Asistente de Draft
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 19L19 5M5 5l4 4M15 15l4 4"/>
+            <circle cx="5" cy="19" r="2"/>
+            <circle cx="19" cy="5" r="2"/>
+          </svg>
+          Asistente de Draft
         </a>
         <a href="#" class="nav-item" id="nav-matches">
-          <span class="nav-icon">📖</span> Historial de Partidas
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 6h16M4 10h16M4 14h10"/>
+          </svg>
+          Historial de Partidas
         </a>
         <a href="#" class="nav-item" id="nav-settings">
-          <span class="nav-icon">⚙️</span> Configuración
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="3"/>
+            <path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+          </svg>
+          Configuración
         </a>
       </nav>
       <div class="sidebar-footer">

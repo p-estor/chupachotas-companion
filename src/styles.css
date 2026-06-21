@@ -1,17 +1,17 @@
 /* Premium Design System for chupachotas.companion */
 
 :root {
-  --bg-primary: #07090e;
-  --bg-secondary: #0f1320;
-  --bg-sidebar: #05070a;
-  --text-main: #f8fafc;
-  --text-muted: #94a3b8;
-  --accent-cyan: #00f0ff;
-  --accent-purple: #8a2be2;
-  --win-color: #00ff87;
-  --loss-color: #ff4655;
-  --border-color: rgba(255, 255, 255, 0.08);
-  --border-hover: rgba(0, 240, 255, 0.3);
+  --bg-primary: var(--bg-primary);
+  --bg-secondary: var(--bg-deep);
+  --bg-sidebar: var(--bg-primary);
+  --text-main: var(--text-primary);
+  --text-muted: var(--text-secondary);
+  --accent-cyan: var(--accent-cyan);
+  --accent-purple: var(--accent-purple);
+  --win-color: var(--win-color);
+  --loss-color: var(--loss-color);
+  --border-color: var(--border-normal);
+  --border-hover: var(--border-glow);
 }
 
 * {

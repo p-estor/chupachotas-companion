@@ -1,0 +1,67 @@
+/* ============================================================
+   chupachotas — design tokens (companion)
+   Fuente de verdad: DESIGN_SYSTEM.md + decisión de paleta "Opción B"
+   Generado: 2026-06-21. Mismos valores que tokens/web.css y tokens/tracker.css.
+   ============================================================ */
+
+:root {
+  /* Fondos */
+  --bg-primary: #05080c;
+  --bg-deep: #0a0f18;
+  --bg-card: rgba(13, 22, 33, 0.7);
+  --bg-card-hover: rgba(20, 32, 48, 0.85);
+
+  /* Bordes */
+  --border-normal: rgba(255, 255, 255, 0.06);
+  --border-glow: rgba(0, 210, 255, 0.15);
+
+  /* Texto */
+  --text-primary: #f0f4f8;
+  --text-secondary: #8da2b9;
+  --text-muted: #536c84;
+
+  /* Acentos */
+  --accent-cyan: #00d2ff;
+  --accent-blue: #1d4ed8;
+  --accent-purple: #a855f7;
+  --accent-gold: #c8aa6e;
+  --accent-gold-bright: #f0cb85;
+
+  /* Estado de partida */
+  --win-color: #10b981;
+  --loss-color: #ef4444;
+
+  /* Escala de tier / rango */
+  --color-unranked: #707070;
+  --color-iron: #a19d94;
+  --color-bronze: #cd7f32;
+  --color-silver: #c0c0c0;
+  --color-gold: #e5c158;
+  --color-platinum: #a3d3c9;
+  --color-emerald: #2ecc71;
+  --color-diamond: #5dade2;
+  --color-master: #9b59b6;
+  --color-grandmaster: #e74c3c;
+  --color-challenger: #f1c40f;
+
+  /* Tipografía */
+  --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+  /* Sombra / blur */
+  --shadow-neon: 0 0 20px rgba(0, 210, 255, 0.15);
+  --shadow-gold: 0 0 20px rgba(200, 170, 110, 0.2);
+  --blur-glass: blur(12px);
+}
+
+/* ------------------------------------------------------------
+   Capa "overlay" — la ventana overlay.html del companion necesita
+   fondo realmente transparente (no glass simulado), porque es una
+   ventana nativa flotando sobre el juego. Por eso es un bloque
+   aparte: hereda los mismos colores, pero NO toques --bg-primary
+   aquí ni uses fondos sólidos en el overlay.
+   ------------------------------------------------------------ */
+.overlay-context {
+  /* El overlay usa --bg-card (con alpha) sobre fondo de ventana
+     transparente, nunca --bg-primary sólido. */
+  background: transparent !important;
+}

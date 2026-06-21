@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>chupachotas.companion — Desktop</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <script type="module" src="/main.js" defer></script>
+</head>
+<body>
+  <div class="app-container">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <div class="logo">
+        <span class="logo-icon">✦</span>
+        <span class="logo-text">chupachotas<span class="highlight">.companion</span></span>
+      </div>
+      <!-- Profile Widget (visible when connected) -->
+      <div class="profile-widget" id="profile-widget" style="display: none;">
+        <img id="profile-icon" class="profile-icon" src="" alt="Icono">
+        <div class="profile-meta">
+          <div id="profile-name" class="profile-name">-</div>
+          <div id="profile-level" class="profile-level">Nivel -</div>
+        </div>
+      </div>
+      <nav class="nav-menu">
+        <a href="#" class="nav-item active" id="nav-dashboard">
+          <span class="nav-icon">📊</span> Panel de Control
+        </a>
+        <a href="#" class="nav-item" id="nav-draft">
+          <span class="nav-icon">🔮</span> Asistente de Draft
+        </a>
+        <a href="#" class="nav-item" id="nav-matches">
+          <span class="nav-icon">📖</span> Historial de Partidas
+        </a>
+        <a href="#" class="nav-item" id="nav-settings">
+          <span class="nav-icon">⚙️</span> Configuración
+        </a>
+      </nav>
+      <div class="sidebar-footer">
+        <span class="version">v0.1.0-alpha</span>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+      <header class="top-header">
+        <div class="welcome-text">
+          <h1>Bienvenido de nuevo, invocador</h1>
+          <p class="subtitle">Tu asistente de eSports impulsado por datos</p>
+        </div>
+        <!-- LoL LCU Connection Status Indicator -->
+        <div class="connection-status" id="connection-status">
+          <span class="status-indicator disconnected"></span>
+          <span class="status-text" id="status-text">Buscando cliente de LoL...</span>
+        </div>
+      </header>
+
+      <!-- Dashboard View -->
+      <div id="view-dashboard" class="content-view">
+        <section class="dashboard-grid">
+          <!-- Draft Assistant Card (Preview) -->
+          <div class="card interactive-card">
+            <div class="card-header">
+              <span class="card-emoji">🔮</span>
+              <h3>Recomendación de Draft</h3>
+            </div>
+            <p class="card-description">Haz clic en "Asistente de Draft" en el menú para ver la fase de selección de campeones en tiempo real.</p>
+            <div class="card-status status-alert" id="dashboard-draft-status">Esperando Selección de Campeón...</div>
+          </div>
+
+          <!-- Live Game Card -->
+          <div class="card interactive-card">
+            <div class="card-header">
+              <span class="card-emoji">🎯</span>
+              <h3>Macro Coach Activo</h3>
+            </div>
+            <p class="card-description">Lectura en vivo de datos de la partida. Te guiará con recordatorios de objetivos y alertas de visión.</p>
+            <div class="card-status status-alert">Esperando inicio de partida...</div>
+          </div>
+
+          <!-- Connection Details Card -->
+          <div class="card" id="details-card">
+            <div class="card-header">
+              <span class="card-emoji">🔌</span>
+              <h3>Estado del Cliente (LCU)</h3>
+            </div>
+            <div class="connection-details">
+              <div class="detail-row">
+                <span class="label">Puerto API:</span>
+                <span class="value" id="val-port">-</span>
+              </div>
+              <div class="detail-row">
+                <span class="label">Proceso PID:</span>
+                <span class="value" id="val-pid">-</span>
+              </div>
+              <div class="detail-row">
+                <span class="label">Autenticación:</span>
+                <span class="value" id="val-auth">Desconectado</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Draft Assistant View -->
+      <div id="view-draft" class="content-view" style="display: none;">
+        <div class="card" style="width: 100%; max-width: 600px;">
+          <div class="card-header">
+            <span class="card-emoji">🔮</span>
+            <h2>Asistente de Selección</h2>
+          </div>
+          <p class="card-description" id="draft-description">Cuando entres a la fase de selección de campeones (por ejemplo, en una personalizada con bots), esta sección se activará automáticamente mostrando tus aliados.</p>
+          <div class="draft-team-list" id="draft-team-list" style="display: none; margin-top: 1.5rem;"></div>
+          <div class="card-status status-alert" id="draft-status" style="margin-top: 1.5rem;">Esperando Selección de Campeón...</div>
+        </div>
+      </div>
+
+      <!-- Match History View -->
+      <div id="view-matches" class="content-view" style="display: none;">
+        <h2>Historial de Partidas</h2>
+        <p class="subtitle" style="margin-bottom: 1.5rem;">Tus últimas 5 partidas en el cliente de League of Legends</p>
+        <div class="match-list" id="match-list">
+          <div class="card">
+            <p style="color: var(--text-muted); text-align: center;">Conéctate al cliente de LoL para cargar tu historial de partidas.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Settings View -->
+      <div id="view-settings" class="content-view" style="display: none;">
+        <h2>Configuración</h2>
+        <p class="subtitle" style="margin-bottom: 1.5rem;">Opciones del asistente de eSports</p>
+        <div class="card">
+          <h3>Modo de Asistencia</h3>
+          <p class="card-description">Personaliza la forma en que RiftWatcher recopila la información.</p>
+          <div style="margin-top: 1rem; color: var(--text-muted);">
+            <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+              <input type="checkbox" checked disabled> Monitoreo del LCU Lockfile en Windows
+            </label>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

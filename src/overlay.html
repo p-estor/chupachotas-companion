@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>chupachotas.companion — Overlay</title>
+  <link rel="stylesheet" href="overlay.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <script type="module" src="overlay.js" defer></script>
+</head>
+<body>
+  <!-- Interactive HUD widget floating on the screen -->
+  <div id="overlay-hud" class="overlay-hud">
+    <div class="hud-header">
+      <span class="hud-icon">🔮</span>
+      <div class="hud-titles">
+        <h3>Recomendación de Draft</h3>
+        <span class="hud-subtitle">chupachotas.companion</span>
+      </div>
+    </div>
+    
+    <div class="hud-content">
+      <div class="hud-section-title">Recomendaciones AP / Utilidad</div>
+      <div class="rec-list">
+        <div class="rec-item">
+          <img class="rec-icon" src="https://ddragon.leagueoflegends.com/cdn/14.3.1/img/champion/Morgana.png" alt="Morgana">
+          <div class="rec-info">
+            <span class="champ-name">Morgana</span>
+            <span class="champ-reason">Excelente iniciación y escudo anti CC</span>
+          </div>
+          <span class="score-badge">94%</span>
+        </div>
+        <div class="rec-item">
+          <img class="rec-icon" src="https://ddragon.leagueoflegends.com/cdn/14.3.1/img/champion/Brand.png" alt="Brand">
+          <div class="rec-info">
+            <span class="champ-name">Brand</span>
+            <span class="champ-reason">Daño masivo en área contra tanques</span>
+          </div>
+          <span class="score-badge">88%</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="hud-footer">
+      <span>Fase de Selección de Campeón Activa</span>
+    </div>
+  </div>
+</body>
+</html>

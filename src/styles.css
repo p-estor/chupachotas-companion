@@ -1,15 +1,10 @@
 /* Premium Design System for chupachotas.companion */
 
 :root {
-  --bg-primary: var(--bg-primary);
   --bg-secondary: var(--bg-deep);
   --bg-sidebar: var(--bg-primary);
   --text-main: var(--text-primary);
   --text-muted: var(--text-secondary);
-  --accent-cyan: var(--accent-cyan);
-  --accent-purple: var(--accent-purple);
-  --win-color: var(--win-color);
-  --loss-color: var(--loss-color);
   --border-color: var(--border-normal);
   --border-hover: var(--border-glow);
 }
